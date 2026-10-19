@@ -1,16 +1,56 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="estilo.css">
-    <title>AulaDom</title>
-
+    <!-- CSS EXTERNO -->
+    <link rel="stylesheet" href="src/css/estilo.css">
+    <title>Aula Dom</title>
 </head>
-<body>
-    
 
-    <script src="./src/js/script.js"> </script>
+<body>
+
+    <header>
+        <!-- id para o javascript e class para o css / casos complexos -->
+        <h1 id="titulo">Título</h1>
+    </header>
+
+    <main>
+        <section>
+            <p>
+                <!-- label (rótulo) / for (nome do rótulo) -->
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome">
+                <!-- JavaScript -> onclick (evento) / método mudar() -->
+                <button type="submit" onclick="mudar()">Mudar</button>
+            </p>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>Classificação Time</h2>
+            <p>Primeiro colocado: <span class="time"></span></p>
+            <p>Segundo colocado: <span class="time"></span></p>
+            <p>Terceiro colocado: <span class="time"></span></p>
+
+            <p>
+                <label for="novo">Novo classificado:</label>
+                <input type="text" name="novo" id="novo"/>
+            </p>
+
+            <p>
+                <label for="posicao">Posição</label>
+                <input type="number" min="1" max="3" id="posicao" name="posicao"/>
+            </p>
+
+            <button type="submit" onclick="inserir()"> Adicionar time</button>
+        </section>
+    </main>
+
+    <!-- JS EXTERNO -->
+    <script src="./src/js/script.js"></script>
 </body>
+
 </html>

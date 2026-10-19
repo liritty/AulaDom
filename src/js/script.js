@@ -40,5 +40,33 @@ function inserir(){
 
     // o get by class name puxa pela classe 
     document.getElementsByClassName("time")[numero].innerHTML = novoTime;
-
 }
+
+// query pega uma class especifica 
+// se tievr varios iguais e n botar all ele pega o primeiro 
+let botao = document.querySelector("#btnimagem");
+let container = document.querySelector("#containerimagem");
+
+
+// add evento de click
+
+botao.addEventListener("click",function(){
+
+    if(document.getElementById("minhaimagem")){
+        alert("imagem ja foi criada!")
+        return; // para a execucao
+    }
+
+    let novaimg = document.createElement("img");
+    novaimg.id = "minhaimagem";
+    novaimg.src ="/src/assets/cavalo.jpg";
+    novaimg.alt ="homem e galinha andando a cavalo";
+
+    container.appendChild(novaimg)
+
+    // estilo
+    novaimg.style.width="400px";
+    novaimg.style.borderRadius="10px";
+    novaimg.style.marginTop="15px";
+    novaimg.style.display="block";
+})
